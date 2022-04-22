@@ -1,0 +1,11 @@
+﻿{
+  "solution": {
+    "path": "BeatTable.sln",
+    "projects": [
+      "BeatTable.Desktop\\BeatTable.Desktop.csproj",
+      "BeatTable.Game\\BeatTable.Game.csproj",
+      "BeatTable.Game.Tests\\BeatTable.Game.Tests.csproj",
+      "BeatTable.Resources\\BeatTable.Resources.csproj"
+    ]
+  }
+}
