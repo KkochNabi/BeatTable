@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace BeatTable.Game.Charts
 {
-    public class BmsParser : IChartFormatParser
+    public class BmsParser : IChartFormatParser // TODO: Make this entire class and interface static
     {
         private static int player;
         private static string genre;
@@ -54,6 +55,10 @@ namespace BeatTable.Game.Charts
             { "BMP", addBmp }
         };
 
+        public BmsParser(string path) => Parse(new List<string>(File.ReadAllLines(path)));
+        public BmsParser(List<string> data) => Parse(data);
+        public BmsParser() { }
+
         public Chart Parse(List<string> data)
         {
             var split = new Func<string, string[]>(s => s.Split(' ', 2));
@@ -83,6 +88,7 @@ namespace BeatTable.Game.Charts
 
                             break;
                         }
+
                         break;
 
                     case 2:
